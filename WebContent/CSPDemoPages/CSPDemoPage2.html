@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CSPDemoPage2</title>
+</head>
+<script
+			  src="https://code.jquery.com/jquery-2.2.3.min.js"
+			  integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+			  crossorigin="anonymous"></script>
+<body>
+
+<p>
+This page has it's CSP header inserted via the CSPFilter1.java class. As a result the "report-uri" parameter is supported.
+
+This page attempts to load jQuery from an external CDN.
+
+If you go to the Web Browser Console, you can see that the CSP header prevented the external javascript from loading and threw an error
+
+Content Security Policy: The page's settings blocked the loading of a resource at https://code.jquery.com/jquery-2.2.3.min.js ("default-src http://localhost:8080").
+</p>
+
+<p>
+Also the report uri option is supported via the CSP header.
+
+As configured the filter printed out the reported CSP violation that it received from the browser.
+
+{"csp-report":{"blocked-uri":"https://code.jquery.com","document-uri":"http://localhost:8080/SimpleCSPDemo/CSPDemoPages/CSPDemoPage2.html","original-policy":"default-src http://localhost:8080; child-src 'none'; object-src 'none'; report-uri http://localhost:8080/SimpleCSPDemo/cspReportUrl","referrer":"","violated-directive":"default-src http://localhost:8080"}}
+</p>
+</body>
+</html>
