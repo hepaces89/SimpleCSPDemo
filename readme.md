@@ -25,10 +25,10 @@ Install code into Webserver
  - web.xml : configures the java files and tells them which url patterns to listen on
 
 ### Step 3
-Explore `<meta>` based CSP features @ http://localhost:8080/SimpleCSPDemo/CSPDemoPages/CSPDemoPage1.html
+Explore `<meta>` based CSP features @ http://localhost:8080/SimpleCSPDemo/CSPDemoPages/CSPViaMetaTag.html
 
 ### Step 4
-Explore header based CSP features @ http://localhost:8080/SimpleCSPDemo/CSPDemoPages/CSPDemoPage2.html
+Explore header based CSP features @ http://localhost:8080/SimpleCSPDemo/CSPDemoPages/CSPViaHttpHeader.html
 
 ### Step 5
 Examine the web.xml configuration and the CSPFilter1.java Filter that inserts the CSP header as this is something you will need if you want to insert headers on the fly.
