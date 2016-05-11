@@ -17,7 +17,7 @@
   
   <filter-mapping>
   	<filter-name>CSPHeaderFilter1</filter-name>
-  	<url-pattern>/CSPDemoPages/CSPDemoPage2.html</url-pattern>
+  	<url-pattern>/CSPDemoPages/CSPHttpHeaderProtected/*</url-pattern>
   </filter-mapping>
   
   <servlet>

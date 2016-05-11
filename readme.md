@@ -28,7 +28,7 @@ Install code into Webserver
 Explore `<meta>` based CSP features @ http://localhost:8080/SimpleCSPDemo/CSPDemoPages/CSPViaMetaTag.html
 
 ### Step 4
-Explore header based CSP features @ http://localhost:8080/SimpleCSPDemo/CSPDemoPages/CSPViaHttpHeader.html
+Explore header based CSP features @ http://localhost:8080/SimpleCSPDemo/CSPDemoPages/CSPHttpHeaderProtected/CSPViaHttpHeader.html
 
 ### Step 5
 Examine the web.xml configuration and the CSPFilter1.java Filter that inserts the CSP header as this is something you will need if you want to insert headers on the fly.
