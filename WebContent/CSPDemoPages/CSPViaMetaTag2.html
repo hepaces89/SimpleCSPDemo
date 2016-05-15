@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CSP via meta tag demo page</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'sha256-6YOhUA+4aSuzU3U2OIlU+UmOdhC0vIrK6nuvwY1rNro=' 'sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo='; child-src 'none'; object-src 'none'; report-uri /SimpleCSPDemo/cspReportUrl"> 
+</head>
+<script
+			  src="https://code.jquery.com/jquery-2.2.3.min.js"
+			  integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+			  crossorigin="anonymous"></script>
+<body>
+<script>
+alert('foo');
+</script>
+<p>
+This page has a CSP meta tag in its header. This header restricts the page javascript that comes from this domain.
+
+As a result when we tried to load jQuery from an external CDN we got an error.
+
+If you go to the Web Browser Console, you can see that when we attempt to load jQuery from a CDN on this page, it completely fails with the following error message:
+
+Content Security Policy: The page's settings blocked the loading of a resource at https://code.jquery.com/jquery-2.2.3.min.js ("default-src http://localhost:8080").
+</p>
+
+<p>
+Also the report uri option is not supported via the meta element:
+
+Content Security Policy: Ignoring source 'report-uri' (Not supported when delivered via meta element).
+</p>
+</body>
+</html>
