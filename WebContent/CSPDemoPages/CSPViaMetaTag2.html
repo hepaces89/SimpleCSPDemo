@@ -3,7 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>CSP via meta tag demo page</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'sha256-6YOhUA+4aSuzU3U2OIlU+UmOdhC0vIrK6nuvwY1rNro=' 'sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo='; child-src 'none'; object-src 'none'; report-uri /SimpleCSPDemo/cspReportUrl"> 
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'sha256-6YOhUA+4aSuzU3U2OIlU+UmOdhC0vIrK6nuvwY1rNro=' 'sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo='; child-src 'none'; object-src 'none'; style-src 'sha256-gGLF8NmqwCCGwlhNAr1MSA+qdJEHF9jKIGhR4Co4yb4=' 'sha256-JEA5gM8eMsI4KJXBAI4sugN9QVRJd5lkvqdE2ZtV2iY='; report-uri /SimpleCSPDemo/cspReportUrl"> 
 </head>
 <script
 			  src="https://code.jquery.com/jquery-2.2.3.min.js"
@@ -13,7 +13,13 @@
 <script>
 alert('foo');
 </script>
-<p>
+<style>
+.foo {color: blue}
+</style>
+<style>
+.bar {color: red}
+</style>
+<p class='bar'>
 This page has a CSP meta tag in its header. This header restricts the page javascript that comes from this domain.
 
 As a result when we tried to load jQuery from an external CDN we got an error.
@@ -23,7 +29,7 @@ If you go to the Web Browser Console, you can see that when we attempt to load j
 Content Security Policy: The page's settings blocked the loading of a resource at https://code.jquery.com/jquery-2.2.3.min.js ("default-src http://localhost:8080").
 </p>
 
-<p>
+<p class="foo">
 Also the report uri option is not supported via the meta element:
 
 Content Security Policy: Ignoring source 'report-uri' (Not supported when delivered via meta element).
